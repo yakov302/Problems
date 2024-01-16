@@ -2,4 +2,4 @@
 
 #include "linked_list.hpp"
 
-void add_two_numbers(const LinkedList& first, const LinkedList& second, LinkedList& answer);
+void add_two_numbers(LinkedList& first, LinkedList& second, LinkedList& answer);

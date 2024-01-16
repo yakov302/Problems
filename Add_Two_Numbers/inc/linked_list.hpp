@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include "node.hpp"
+#include "iterator.hpp"
 
 class LinkedList
 {
@@ -19,12 +20,12 @@ public:
     int pop_head();
     int pop_tail();
 
-    int head() const;
-    int tail() const;
     int size() const;
+    int head_data() const;
+    int tail_data() const;
     
-    Node* head_node() const;
-    Node* tail_node() const;
+    Iterator start();
+    Iterator end();
     
     void clear();
     void print() const;
@@ -33,9 +34,10 @@ private:
     bool is_list_empty() const;
     void delete_node(Node* node);
     void push_empty_list(int data);
+    void check_if_one_node_case(Node* deleted_node);
 
 private:
-    Node m_head;
+    Node* m_head;
     Node m_tail;
     int m_num_of_nods;
 };

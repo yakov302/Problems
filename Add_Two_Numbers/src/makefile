@@ -15,7 +15,7 @@ CPPFLAGS = -I$(INC_DIR)
 
 
 TARGET = main
-OBJS = ./main.o ./add_2_numbers.o ./linked_list.o ./node.o 
+OBJS = ./main.o ./linked_list.o ./node.o ./iterator.o ./add_2_numbers.o
 
 $(TARGET):$(OBJS)
 
