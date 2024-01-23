@@ -36,7 +36,12 @@ void set_iterators(std::vector<LinkedList*>& lists, std::vector<Iterator>& itera
     iterators.reserve(size);
 
     for(int i = 0; i < size; ++i)
-       iterators.push_back(lists[i]->start());
+    {
+        if(lists[i]->size() > 0)
+            iterators.push_back(lists[i]->start());
+        else
+            iterators.push_back(nullptr);
+    }
 }
 
 void variables_assignment(int& min_value, std::vector<int>& min_indexes, int& stop_flag, int num_of_lists)
@@ -97,7 +102,7 @@ void merge_lists(std::vector<LinkedList*>& lists, LinkedList& answer)
 
         for(int i = 0; i < num_of_lists; ++i) //loop for all lists
         {
-            if(iterators[i] == lists[i]->end()) //list[i] reach  end
+            if((iterators[i] == nullptr) || (iterators[i] == lists[i]->end())) //list[i] reach  end or empty
             {
                 --stop_flag;
                 continue;
