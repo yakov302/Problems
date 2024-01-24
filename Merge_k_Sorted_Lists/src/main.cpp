@@ -16,5 +16,6 @@ int main()
     merge_lists(vector, answer);
     validate(answer, NUM_OF_LISTS, N);
 
+    free_lists(vector);
     return 0;
 }

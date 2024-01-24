@@ -20,6 +20,13 @@ LinkedList* make_list(int n, int max, int min)
     return list;
 }
 
+void free_lists(std::vector<LinkedList*>& vector)
+{
+    const int size = vector.size();
+    for(int i = 0; i < size; ++i)
+        delete vector[i];
+}
+
 void make_vector_of_lists(int n, int num_of_lists, std::vector<LinkedList*>& vector)
 {
     vector.reserve(num_of_lists);
