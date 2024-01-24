@@ -110,13 +110,13 @@ void merge_lists(std::vector<LinkedList*>& lists, LinkedList& answer)
 
             value_check(iterators[i].data());
 
-            if(iterators[i].data() < min_value) //the low value in list[i] up to now
+            if(iterators[i].data() < min_value) //the low value in all lists up to now in this loop
             {
-                if(!min_indexes.empty()) //incorrect low value for list[i] was set previously
+                if(!min_indexes.empty()) //incorrect low value was set previously in this loop
                     delete_previous_low_values(min_indexes, iterators, answer);
                 push_low_value_to_answer(answer, iterators, min_indexes, min_value, i, true);
             }
-            else if(iterators[i].data() == min_value) //another identical low value in list[i]
+            else if(iterators[i].data() == min_value) //another identical low value in this loop
             {
                 push_low_value_to_answer(answer, iterators, min_indexes, min_value, i, false);
             }
